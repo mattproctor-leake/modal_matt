@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matt Modal</title>
+    <link rel="stylesheet" href="./base.css">
+</head>
+
+<body>
+    <div class="cards">
+        <div class="card" data-description="Matt at Work">
+            <img src="https://picsum.photos/200?random=1" alt="Matt at work">
+            <h2>Trailfinders Matt</h2>
+            <button>Learn more →</button>
+        </div>
+        <div class="card" data-description="Matt is on the Great Wall of China">
+            <img src="https://picsum.photos/200?random=2" alt="Matt on Great Wall">
+            <h2>Great Wall Matt</h2>
+            <button>Learn more →</button>
+        </div>
+        <div class="card"
+            data-description="Matt is on top of the World (well, the summit of Mount Kilimanjaro to be precise!)">
+            <img src="https://picsum.photos/200?random=3" alt="Matt on top of Kili">
+            <h2>Kili Matt</h2>
+            <button>Learn more →</button>
+        </div>
+        <div class="card" data-description="Matt is a Mongolian Warrior">
+            <img src="https://picsum.photos/200?random=4" alt="Matt is a warrior">
+            <h2>Warrior Matt</h2>
+            <button>Learn more →</button>
+        </div>
+    </div>
+
+    <div class="modal-outer">
+        <div class="modal-inner">
+            <p> Testing 123 </p>
+        </div>
+
+    </div>
+
+
+    <script src="./modal.js"></script>
+
+    <style>
+        body {
+            background: url('footy.jpg');
+            background-size: cover;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-gap: 20px;
+            padding: 2rem;
+        }
+
+        .card {
+            background: white;
+            padding: 1rem;
+            border-radius: 2px;
+        }
+
+        .card h2 {
+            color: black;
+        }
+
+        .card img {
+            width: 100%;
+        }
+
+        .modal-outer {
+            display: grid;
+            background: rgba(91, 128, 128, 0.7);
+            position: fixed;
+            height: 100vh;
+            width: 100vw;
+            top: 0;
+            left: 0;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-inner {
+            max-width: 600px;
+            max-height: 200px;
+            background: lightgray;
+            padding: 2rem;
+            border-radius: 5px;
+        }
+    </style>
+</body>
+
+</html>
