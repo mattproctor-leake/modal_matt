@@ -10,32 +10,30 @@
 
 <body>
     <div class="cards">
-        <div class="card" data-description="Matt at Work">
-            <img src="https://picsum.photos/200?random=1" alt="Matt at work">
-            <h2>Trailfinders Matt</h2>
+        <div class="card" data-description="Matt is transitting Mongolia">
+            <img src="matt_train.jpg" alt="Matt at work">
+            <h2><img class="thumbnail" src="M.jpg" alt="M" />Train Matt</h2>
             <button>Learn more →</button>
         </div>
-        <div class="card" data-description="Matt is on the Great Wall of China">
-            <img src="https://picsum.photos/200?random=2" alt="Matt on Great Wall">
-            <h2>Great Wall Matt</h2>
+        <div class="card" data-description="Matt is scaling the Great Wall">
+            <img src="matt_wall.jpg" alt="Matt on Great Wall">
+            <h2><img class="thumbnail" src="A.jpg" alt="A" />Great Wall Matt</h2>
             <button>Learn more →</button>
         </div>
-        <div class="card"
-            data-description="Matt is on top of the World (well, the summit of Mount Kilimanjaro to be precise!)">
-            <img src="https://picsum.photos/200?random=3" alt="Matt on top of Kili">
-            <h2>Kili Matt</h2>
+        <div class="card" data-description="Matt is on top of the World!">
+            <img src="matt_mountain.jpg" alt="Matt on top of Kili">
+            <h2><img class="thumbnail" src="TT.jpg" alt="T" />Kili Matt</h2>
             <button>Learn more →</button>
         </div>
         <div class="card" data-description="Matt is a Mongolian Warrior">
-            <img src="https://picsum.photos/200?random=4" alt="Matt is a warrior">
-            <h2>Warrior Matt</h2>
+            <img src="matt_warrior.jpg" alt="Matt is a warrior">
+            <h2><img class="thumbnail" src="T2.jpg" alt="T" />Warrior Matt</h2>
             <button>Learn more →</button>
         </div>
     </div>
 
     <div class="modal-outer">
         <div class="modal-inner">
-            <p> Testing 123 </p>
         </div>
 
     </div>
@@ -70,6 +68,12 @@
             width: 100%;
         }
 
+        img.thumbnail {
+            width: 10%;
+            height: 10%;
+            float: right;
+        }
+
         .modal-outer {
             display: grid;
             background: rgba(91, 128, 128, 0.7);
@@ -80,14 +84,33 @@
             left: 0;
             justify-content: center;
             align-items: center;
+            /* hide this modal until we need it */
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.2s;
+        }
+
+        .modal-outer.open {
+            opacity: 1;
+            pointer-events: all;
+        }
+
+        .modal-outer img {
+            width: 100%;
         }
 
         .modal-inner {
             max-width: 600px;
-            max-height: 200px;
+            max-height: 600px;
             background: lightgray;
             padding: 2rem;
             border-radius: 5px;
+            transform: translateY(-200%);
+            transition: transform 2s;
+        }
+
+        .modal-outer.open .modal-inner {
+            transform: translateY(0)
         }
     </style>
 </body>
