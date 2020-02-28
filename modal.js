@@ -1,3 +1,4 @@
+//this is for scroll box 
 const terms = document.querySelector('.terms-and-conditions');
 const watch = document.querySelector('.watch');
 const button = document.querySelector('.accept');
@@ -5,7 +6,6 @@ const button = document.querySelector('.accept');
 function obCallback(payload) {
     if (payload[0].intersectionRatio === 1) {
       button.disabled = false;
-      console.log(payload);
       // stop observing the button
       ob.unobserve(terms.lastElementChild);
     }
@@ -20,7 +20,7 @@ function obCallback(payload) {
   ob.observe(terms.lastElementChild);
 
 
-
+// this is for 4 x modals
 const cardButtons = document.querySelectorAll('.card button');
 const modalInner = document.querySelector('.modal-inner');
 const modalOuter = document.querySelector('.modal-outer');
