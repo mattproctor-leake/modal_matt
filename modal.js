@@ -1,6 +1,31 @@
+const terms = document.querySelector('.terms-and-conditions');
+const watch = document.querySelector('.watch');
+const button = document.querySelector('.accept');
+
+function obCallback(payload) {
+    if (payload[0].intersectionRatio === 1) {
+      button.disabled = false;
+      console.log(payload);
+      // stop observing the button
+      ob.unobserve(terms.lastElementChild);
+    }
+  }
+
+  
+  const ob = new IntersectionObserver(obCallback, {
+    root: terms,
+    threshold: 0,
+  });
+  
+  ob.observe(terms.lastElementChild);
+
+
+
 const cardButtons = document.querySelectorAll('.card button');
 const modalInner = document.querySelector('.modal-inner');
 const modalOuter = document.querySelector('.modal-outer');
+
+console.log(button);
 
 function handleCardButtonClick () {
     const button = event.currentTarget;
@@ -31,7 +56,9 @@ modalOuter.addEventListener('click', function(e) {
     }
 })
 window.addEventListener('keydown', (e) => {
-    if(event.key === 'Escape') {
+    if(e.key === 'Escape') {
         closeModal();
     }
 })
+
+
